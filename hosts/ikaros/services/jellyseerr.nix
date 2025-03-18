@@ -1,6 +1,6 @@
 {...}: {
   virtualisation.oci-containers.containers.jellyseerr = {
-    image = "fallenbagel/jellyseerr:2.5.1";
+    image = "fallenbagel/jellyseerr";
     ports = ["5055:5055"];
     environment = {
       LOG_LEVEL = "debug";

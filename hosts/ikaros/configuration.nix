@@ -12,6 +12,7 @@
     ../../nix/common.nix
     ../../nix/boot.nix
     ../../nix/comin.nix
+    ../../nix/docker.nix
     ./persist.nix
     ./services/caddy.nix
     ./services/postgres.nix
