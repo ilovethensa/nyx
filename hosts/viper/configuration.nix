@@ -12,6 +12,7 @@
     ../../nix/users.nix
     ../../nix/common.nix
     ../../nix/boot.nix
+    ../../nix/comin.nix
   ];
 
   networking = {
