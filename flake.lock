@@ -16,6 +16,26 @@
         "type": "github"
       }
     },
+    "comin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1741725246,
+        "narHash": "sha256-gmSml3y7M8MAeigwy9qsfOjR7afPivAR3MbPPywdDuk=",
+        "owner": "nlewo",
+        "repo": "comin",
+        "rev": "42de4a8e511b2d64849a0243b35000a3d96b5f79",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nlewo",
+        "repo": "comin",
+        "type": "github"
+      }
+    },
     "crane": {
       "locked": {
         "lastModified": 1727316705,
@@ -330,6 +350,7 @@
     },
     "root": {
       "inputs": {
+        "comin": "comin",
         "firefox-addons": "firefox-addons",
         "firefox-gnome-theme": "firefox-gnome-theme",
         "home-manager": "home-manager",

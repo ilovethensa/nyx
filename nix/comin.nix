@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  imports = [comin.nixosModules.comin];
+  imports = [inputs.comin.nixosModules.comin];
   services.comin = {
     enable = true;
     remotes = [
