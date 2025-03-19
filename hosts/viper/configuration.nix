@@ -9,6 +9,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
+    ./davinci.nix
     ../../nix/users.nix
     ../../nix/common.nix
     ../../nix/boot.nix
@@ -84,15 +85,27 @@
   programs.adb.enable = true;
   environment.systemPackages = with pkgs; [
     android-udev-rules
+    dive # look into docker image layers
+    podman-tui # status of containers in the terminal
+    docker-compose # start group of containers for dev
+    #podman-compose # start group of containers for dev
+    toolbox # container for development
   ];
 
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
+  # Enable common container config files in /etc/containers
+  virtualisation.containers.enable = true;
+  virtualisation = {
+    podman = {
       enable = true;
-      setSocketVariable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
     };
   };
+  programs.nix-ld.enable = true;
 
   system.stateVersion = "24.11";
 }
