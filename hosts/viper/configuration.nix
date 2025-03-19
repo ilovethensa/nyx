@@ -9,7 +9,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
-    ./davinci.nix
+    #./davinci.nix
     ../../nix/users.nix
     ../../nix/common.nix
     ../../nix/boot.nix

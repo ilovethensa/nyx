@@ -1,12 +1,14 @@
-{pkgs, ...}: {
-  environment.systemPackages = [
-    pkgs.davinci-resolve
-  ];
+{
+  pkgs,
+  inputs,
+  ...
+}: {
+  #environment.systemPackages = [
+  #  pkgs.stable.davinci-resolve
+  #];
   # Enable openGL and install Rocm
   hardware.opengl = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
     extraPackages = with pkgs; [
       rocmPackages_5.clr.icd
       rocmPackages_5.clr
