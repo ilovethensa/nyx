@@ -2,11 +2,10 @@
   services.caddy = {
     enable = true;
     virtualHosts = {
-      "theholytachanka.com".extraConfig = ''
-        encode gzip
-        file_server
-        root * /var/www/theholytachanka.com/
-      '';
+      #"theholytachanka.com".extraConfig = ''
+      #  encode gzip
+      #  reverse_proxy http://localhost:5463
+      #'';
       "pwned.page".extraConfig = ''
         encode gzip
         file_server

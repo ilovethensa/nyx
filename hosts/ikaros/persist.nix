@@ -9,6 +9,7 @@
       "/var/lib/docker"
       "/etc/ssh"
       "/var/lib/caddy"
+      "/var/lib/wordpress"
       "/var/www"
     ];
     files = [
