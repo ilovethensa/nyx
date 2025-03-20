@@ -1,21 +1,60 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  wordpress-activitypub = pkgs.stdenv.mkDerivation rec {
+    name = "activitypub";
+    version = "5.5.0";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/${name}.${version}.zip";
+      hash = "sha256-t54YfwXVLfvOJwW84p6zTu9dDpjss5PPgHHZvYUXgg8=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+
+  wordpress-webfinger = pkgs.stdenv.mkDerivation rec {
+    name = "webfinger";
+    version = "3.2.7";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/${name}.${version}.zip";
+      hash = "sha256-4zd8o6+zv7ywoD931ktR8k187VvDSYqVWTAbRaoZsDM=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+  wordpress-norrsken = pkgs.stdenv.mkDerivation rec {
+    name = "norrsken";
+    version = "1.0.8";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/theme/${name}.${version}.zip";
+      hash = "sha256-47U386H8UrPbHKy2XKOEz2hGaPUV84k+XXfhnjfv+bY=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+  wordpress-stockpack = pkgs.stdenv.mkDerivation rec {
+    name = "stockpack";
+    version = "3.4.6";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/${name}.${version}.zip";
+      hash = "sha256-/v/MzHDLAKQXPTAU2BTXbDNOT7kyLVWfbuwE5N2m8KQ=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
+in {
+  imports = [
+    ../../../modules/nixos/wordpress-new.nix
+  ];
   services.wordpress-new = {
     webserver = "caddy";
     sites."theholytachanka.com" = {
       database.createLocally = true;
       virtualHost.addSSL = true;
       themes = {
-        inherit (pkgs.wordpressPackages.themes) twentytwentythree;
+        inherit wordpress-norrsken;
       };
       plugins = {
-        inherit (pkgs.wordpressPackages.plugins) antispam-bee opengraph;
+        inherit wordpress-activitypub wordpress-stockpack wordpress-webfinger;
       };
       settings = {
-        WP_DEFAULT_THEME = "twentytwentytwo";
+        WP_DEFAULT_THEME = "norrsken";
         WP_SITEURL = "https://theholytachanka.com";
         WP_HOME = "https://theholytachanka.com";
-        WP_DEBUG = true;
-        WP_DEBUG_DISPLAY = true;
         AUTOMATIC_UPDATER_DISABLED = true;
       };
     };
