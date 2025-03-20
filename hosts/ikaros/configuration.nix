@@ -27,6 +27,7 @@
     ./services/invidious.nix
     ./services/rgit.nix
     ./services/miniflux.nix
+    ./services/wordpress.nix
   ];
 
   networking = {
