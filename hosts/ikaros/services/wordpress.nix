@@ -8,6 +8,15 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+  wordpress-quotes-llama = pkgs.stdenv.mkDerivation rec {
+    name = "quotes-llama";
+    version = "3.1.1";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/${name}.${version}.zip";
+      hash = "sha256-jsl87E38hDO90JgbbWfSrb8gIJYi5ZY+T1g1murZRew=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
 
   wordpress-webfinger = pkgs.stdenv.mkDerivation rec {
     name = "webfinger";
@@ -49,7 +58,7 @@ in {
         inherit wordpress-norrsken;
       };
       plugins = {
-        inherit wordpress-activitypub wordpress-stockpack wordpress-webfinger;
+        inherit wordpress-activitypub wordpress-stockpack wordpress-webfinger wordpress-quotes-llama;
       };
       settings = {
         WP_DEFAULT_THEME = "norrsken";
