@@ -47,7 +47,13 @@
             }
             rewrite * /capital.txt
         }
+
+        @robots_txt path /robots.txt
+        handle @robots_txt {
+            respond "User-agent: *\nDisallow: /" 200
+        }
       '';
+
       "pwned.page".extraConfig = ''
         encode gzip
         file_server

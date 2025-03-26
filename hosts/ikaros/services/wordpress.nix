@@ -36,6 +36,16 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+
+  wordpress-intentionally-blank = pkgs.stdenv.mkDerivation rec {
+    name = "intentionally-blank";
+    version = "3.1.1";
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/theme/${name}.${version}.zip";
+      hash = "sha256-KsbdC+DNjin1TnJ65e5wIdCb2QhyaL8yJZNhhQA/mxY=";
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
   wordpress-stockpack = pkgs.stdenv.mkDerivation rec {
     name = "stockpack";
     version = "3.4.6";
@@ -51,20 +61,37 @@ in {
   ];
   services.wordpress-new = {
     webserver = "caddy";
-    sites."theholytachanka.com" = {
-      database.createLocally = true;
-      virtualHost.addSSL = true;
-      themes = {
-        inherit wordpress-norrsken;
+    sites = {
+      "theholytachanka.com" = {
+        database.createLocally = true;
+        virtualHost.addSSL = true;
+        themes = {
+          inherit wordpress-norrsken;
+        };
+        plugins = {
+          inherit wordpress-activitypub wordpress-stockpack wordpress-webfinger wordpress-quotes-llama;
+        };
+        settings = {
+          WP_DEFAULT_THEME = "norrsken";
+          WP_SITEURL = "https://theholytachanka.com";
+          WP_HOME = "https://theholytachanka.com";
+          AUTOMATIC_UPDATER_DISABLED = true;
+        };
       };
-      plugins = {
-        inherit wordpress-activitypub wordpress-stockpack wordpress-webfinger wordpress-quotes-llama;
-      };
-      settings = {
-        WP_DEFAULT_THEME = "norrsken";
-        WP_SITEURL = "https://theholytachanka.com";
-        WP_HOME = "https://theholytachanka.com";
-        AUTOMATIC_UPDATER_DISABLED = true;
+      "192.168.1.111" = {
+        database.createLocally = true;
+        themes = {
+          inherit wordpress-norrsken wordpress-intentionally-blank;
+        };
+        plugins = {
+          inherit wordpress-stockpack;
+        };
+        settings = {
+          WP_DEFAULT_THEME = "intentionally-blank";
+          WP_SITEURL = "http://192.168.1.111";
+          WP_HOME = "http://192.168.1.111";
+          AUTOMATIC_UPDATER_DISABLED = true;
+        };
       };
     };
   };
