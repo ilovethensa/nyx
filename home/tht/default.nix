@@ -72,9 +72,7 @@
     cura-appimage
     toolbox
     prismlauncher
-    jdk17
     jdk23
-    jdk11
     easyeffects
 
     mangohud
