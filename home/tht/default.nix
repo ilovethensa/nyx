@@ -62,6 +62,7 @@
     steam
     krita
     vesktop
+    discord
     signal-desktop
     protonplus
     lutris
@@ -74,6 +75,7 @@
     prismlauncher
     jdk23
     easyeffects
+    heroic
 
     mangohud
     gamescope
