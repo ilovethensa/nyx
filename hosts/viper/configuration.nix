@@ -106,6 +106,7 @@
     };
   };
   programs.nix-ld.enable = true;
+  services.flatpak.enable = true;
 
   system.stateVersion = "24.11";
 }
