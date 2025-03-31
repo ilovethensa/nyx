@@ -78,21 +78,6 @@ in {
           AUTOMATIC_UPDATER_DISABLED = true;
         };
       };
-      "192.168.1.111" = {
-        database.createLocally = true;
-        themes = {
-          inherit wordpress-norrsken wordpress-intentionally-blank;
-        };
-        plugins = {
-          inherit wordpress-stockpack;
-        };
-        settings = {
-          WP_DEFAULT_THEME = "intentionally-blank";
-          WP_SITEURL = "http://192.168.1.111";
-          WP_HOME = "http://192.168.1.111";
-          AUTOMATIC_UPDATER_DISABLED = true;
-        };
-      };
     };
   };
   services.mysql.dataDir = "/mnt/data/mysql";
