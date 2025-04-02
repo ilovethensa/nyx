@@ -78,6 +78,23 @@ in {
           AUTOMATIC_UPDATER_DISABLED = true;
         };
       };
+      "admin.pwned.page" = {
+        database.createLocally = true;
+        database.name = "wp_bkms";
+        virtualHost.addSSL = true;
+        themes = {
+          inherit wordpress-intentionally-blank;
+        };
+        plugins = {
+          inherit wordpress-stockpack;
+        };
+        settings = {
+          WP_DEFAULT_THEME = "intentionally-blank";
+          WP_SITEURL = "https://admin.pwned.page";
+          WP_HOME = "https://admin.pwned.page";
+          AUTOMATIC_UPDATER_DISABLED = true;
+        };
+      };
     };
   };
   services.mysql.dataDir = "/mnt/data/mysql";
