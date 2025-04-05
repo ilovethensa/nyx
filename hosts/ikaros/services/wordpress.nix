@@ -65,6 +65,16 @@
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
+
+  wordpress-wp-graphql = pkgs.stdenv.mkDerivation rec {
+    name = "wp-graphql";
+    version = "2.1.1"; # Replace with the correct version if known
+    src = pkgs.fetchzip {
+      url = "https://downloads.wordpress.org/plugin/${name}.zip";
+      hash = "sha256-hUpACDlVyQLcfAfwFid00peoXvUm7vH4fve9SrOP3Vs="; # Replace with the correct hash
+    };
+    installPhase = "mkdir -p $out; cp -R * $out/";
+  };
 in {
   imports = [
     ../../../modules/nixos/wordpress-new.nix
@@ -96,7 +106,7 @@ in {
           inherit wordpress-intentionally-blank;
         };
         plugins = {
-          inherit wordpress-stockpack wordpress-cyr2lat;
+          inherit wordpress-stockpack wordpress-cyr2lat wordpress-wp-graphql;
         };
         settings = {
           WP_DEFAULT_THEME = "intentionally-blank";
