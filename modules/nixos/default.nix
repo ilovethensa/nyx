@@ -4,4 +4,5 @@
   # List your module files here
   # my-module = import ./my-module.nix;
   wordpress-new = import ./wordpress-new.nix;
+  anubis = import ./anubis.nix;
 }
