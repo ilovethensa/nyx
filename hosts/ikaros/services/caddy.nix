@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   services.anubis.instances.default.settings.TARGET = "http://localhost:8080";
   services.caddy = {
     enable = true;
