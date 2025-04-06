@@ -3,7 +3,23 @@
   config,
   ...
 }: {
-  services.anubis.instances.default.settings.TARGET = "http://localhost:8080";
+  imports = [
+    ../../../modules/nixos/anubis.nix
+  ];
+  services.anubis = {
+    defaultOptions = {
+      user = "caddy";
+      settings = {
+        DIFFICULTY = 5;
+        SERVE_ROBOTS_TXT = true;
+      };
+    };
+    instances = {
+      libreddit.settings.TARGET = "http://localhost:8080";
+      rimgo.settings.TARGET = "http://localhost:3000";
+      invidious.settings.TARGET = "http://localhost:1234";
+    };
+  };
   services.caddy = {
     enable = true;
     virtualHosts = {
@@ -37,61 +53,25 @@
       '';
       "lr.pwned.page".extraConfig = ''
         encode gzip
-        reverse_proxy http://unix:${config.services.anubis.instances.default.settings.BIND}
+        reverse_proxy unix/${config.services.anubis.instances.libreddit.settings.BIND}{
+          header_up X-Real-Ip {remote_host}
+        }
       '';
       "pwned.page".extraConfig = ''
         encode gzip
         file_server
         root * /var/www/pwned.page/
-
-        @robot {
-            header User-Agent *bot*
-            header User-Agent *spider*
-            header User-Agent *ai*
-            header_regexp ua (?i)(AdsBot-Google|Amazonbot|anthropic-ai|Applebot|Applebot-Extended|AwarioRssBot|AwarioSmartBot|Bytespider)
-            not path /robots.txt
-        }
-        handle @robot {
-            file_server {
-                root /mnt/data/Backup
-            }
-            rewrite * /capital.txt
-        }
       '';
       "rimgo.pwned.page".extraConfig = ''
         encode gzip
-        reverse_proxy http://localhost:3000
-
-        @robot {
-            header User-Agent *bot*
-            header User-Agent *spider*
-            header User-Agent *ai*
-            header_regexp ua (?i)(AdsBot-Google|Amazonbot|anthropic-ai|Applebot|Applebot-Extended|AwarioRssBot|AwarioSmartBot|Bytespider)
-            not path /robots.txt
-        }
-        handle @robot {
-            file_server {
-                root /mnt/data/Backup
-            }
-            rewrite * /capital.txt
+        reverse_proxy unix/${config.services.anubis.instances.rimgo.settings.BIND}{
+          header_up X-Real-Ip {remote_host}
         }
       '';
       "yt.pwned.page".extraConfig = ''
         encode gzip
-        reverse_proxy http://localhost:1234
-
-        @robot {
-            header User-Agent *bot*
-            header User-Agent *spider*
-            header User-Agent *ai*
-            header_regexp ua (?i)(AdsBot-Google|Amazonbot|anthropic-ai|Applebot|Applebot-Extended|AwarioRssBot|AwarioSmartBot|Bytespider)
-            not path /robots.txt
-        }
-        handle @robot {
-            file_server {
-                root /mnt/data/Backup
-            }
-            rewrite * /capital.txt
+        reverse_proxy unix/${config.services.anubis.instances.invidious.settings.BIND} {
+          header_up X-Real-Ip {remote_host}
         }
       '';
       "192.168.1.111".extraConfig = ''
