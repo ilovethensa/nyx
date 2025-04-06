@@ -5,14 +5,7 @@
 }: {
   imports = [
     ../../../modules/nixos/anubis.nix
-    ../../../modules/nixos/website.nix
   ];
-  websites = {
-    "lr.pwned.page" = {
-      root = "http://localhost:8080";
-      anubis = true;
-    };
-  };
 
   services.anubis = {
     defaultOptions = {
@@ -21,6 +14,11 @@
         DIFFICULTY = 5;
         SERVE_ROBOTS_TXT = true;
       };
+    };
+    instances = {
+      libreddit.settings.TARGET = "http://localhost:8080";
+      rimgo.settings.TARGET = "http://localhost:3000";
+      invidious.settings.TARGET = "http://localhost:1234";
     };
   };
   services.caddy = {
@@ -53,6 +51,12 @@
       "watch.theholytachanka.com".extraConfig = ''
         encode gzip
         reverse_proxy http://localhost:8096
+      '';
+      "lr.pwned.page".extraConfig = ''
+        encode gzip
+        reverse_proxy unix/${config.services.anubis.instances.libreddit.settings.BIND}{
+          header_up X-Real-Ip {remote_host}
+        }
       '';
       "pwned.page".extraConfig = ''
         encode gzip

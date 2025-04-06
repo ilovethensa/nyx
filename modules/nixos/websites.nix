@@ -4,22 +4,40 @@
   pkgs,
   ...
 }: let
-  websites = config.websites or {};
-
-  # Filter sites with anubis enabled.
+  # Load Anubis module
+  anubisModule = import ./anubis.nix;
+  # Get the websites config from the user
+  websites = config.websites;
+  # Filter out sites with anubis = true
   anubisSites = lib.filterAttrs (_: site: site.anubis) websites;
 in {
+  imports = [anubisModule];
+
   options.websites = lib.mkOption {
-    type = lib.types.attrsOf (lib.types.attrs {
-      root = lib.types.str;
-      anubis = lib.types.bool;
+    type = lib.types.attrsOf (lib.types.submodule {
+      options = {
+        root = lib.mkOption {
+          type = lib.types.str;
+          description = "Target root address (domain or socket).";
+        };
+        anubis = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+          description = "Enable Anubis reverse proxy for this site.";
+        };
+        extraConfig = lib.mkOption {
+          type = lib.types.lines;
+          default = "";
+          description = "Additional Caddy configuration.";
+        };
+      };
     });
     default = {};
-    description = "Websites configuration for Anubis or direct reverse proxy.";
+    description = "List of websites and reverse proxy settings.";
   };
 
-  config = lib.mkIf (websites != {}) {
-    # Only add Anubis service instances if there's at least one site with anubis enabled.
+  config = {
+    # Configure Anubis if any sites use it
     services = lib.mkIf (anubisSites != {}) {
       anubis = {
         enable = true;
@@ -31,21 +49,22 @@ in {
       };
     };
 
-    # For every website, create extraConfig based on whether anubis is enabled.
+    # Generate the extraConfig for each website without recursion
     websites =
       lib.mapAttrs (domain: site: {
-        extraConfig =
+        extraConfig = lib.mkDefault (
           if site.anubis
           then ''
             encode gzip
-            reverse_proxy unix/${config.services.anubis.instances.${domain}.settings.BIND}{
+            reverse_proxy unix/${"/run/anubis/" + domain + ".sock"} {
               header_up X-Real-Ip {remote_host}
             }
           ''
           else ''
             encode gzip
             reverse_proxy http://${site.root}
-          '';
+          ''
+        );
       })
       websites;
   };
