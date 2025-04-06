@@ -5,4 +5,5 @@
   # my-module = import ./my-module.nix;
   wordpress-new = import ./wordpress-new.nix;
   anubis = import ./anubis.nix;
+  website = import ./website.nix;
 }
