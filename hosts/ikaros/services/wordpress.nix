@@ -66,12 +66,12 @@
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
 
-  wordpress-wp-graphql = pkgs.stdenv.mkDerivation rec {
-    name = "wp-graphql";
-    version = "2.1.1"; # Replace with the correct version if known
+  wordpress-elementor = pkgs.stdenv.mkDerivation rec {
+    name = "elementor";
+    version = "3.28.3";
     src = pkgs.fetchzip {
-      url = "https://downloads.wordpress.org/plugin/${name}.zip";
-      hash = "sha256-hUpACDlVyQLcfAfwFid00peoXvUm7vH4fve9SrOP3Vs="; # Replace with the correct hash
+      url = "https://downloads.wordpress.org/plugin/${name}.${version}.zip";
+      hash = "sha256-rlEihtxZIaIDPUEOJ6oqdANO+ssdf15mYoiJiyUhq70=";
     };
     installPhase = "mkdir -p $out; cp -R * $out/";
   };
@@ -98,7 +98,7 @@ in {
           AUTOMATIC_UPDATER_DISABLED = true;
         };
       };
-      "admin.pwned.page" = {
+      "admin.bkms.red" = {
         database.createLocally = true;
         database.name = "wp_bkms";
         virtualHost.addSSL = true;
@@ -106,12 +106,12 @@ in {
           inherit wordpress-intentionally-blank;
         };
         plugins = {
-          inherit wordpress-stockpack wordpress-cyr2lat wordpress-wp-graphql;
+          inherit wordpress-stockpack wordpress-cyr2lat wordpress-elementor;
         };
         settings = {
           WP_DEFAULT_THEME = "intentionally-blank";
-          WP_SITEURL = "https://admin.pwned.page";
-          WP_HOME = "https://admin.pwned.page";
+          WP_SITEURL = "https://admin.bkms.red";
+          WP_HOME = "https://admin.bkms.red";
           AUTOMATIC_UPDATER_DISABLED = true;
         };
       };
