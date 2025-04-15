@@ -19,6 +19,7 @@
   };
   services.caddy = {
     enable = true;
+    package =  pkgs.stable.caddy;
     virtualHosts = {
       "automate.theholytachanka.com".extraConfig = ''
         encode gzip
