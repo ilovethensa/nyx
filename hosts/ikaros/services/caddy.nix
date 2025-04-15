@@ -3,10 +3,6 @@
   config,
   ...
 }: {
-  imports = [
-    ../../../modules/nixos/anubis.nix
-  ];
-
   services.anubis = {
     defaultOptions = {
       user = "caddy";
