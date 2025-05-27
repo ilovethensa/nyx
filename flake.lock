@@ -59,11 +59,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1748161689,
-        "narHash": "sha256-gm1ikRi3L2qpTQUUV/dURDUeg/dfstopzBduTKkIdqw=",
+        "lastModified": 1748232210,
+        "narHash": "sha256-hyXsQVgl/URb13iWEONwV3gGZ9IU90Q9yPmn5xoWP/8=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "c60c48473ddf0b439079824cb08ccfa6c703ff87",
+        "rev": "26c86ba664f227c6abb383d3ca8db9365f275766",
         "type": "gitlab"
       },
       "original": {
@@ -164,11 +164,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1748226018,
-        "narHash": "sha256-XxrxUiyo206IS5Qjch3Wu33gth5wmmQoVm5opiqGDNE=",
+        "lastModified": 1748295267,
+        "narHash": "sha256-UJdP+x76SJAzeNNQN5H3g39FF5sObzaOci2wJTg6Org=",
         "owner": "ggml-org",
         "repo": "llama.cpp",
-        "rev": "2d38b6e4004fb1c341723e657fb1e71a4d3fb473",
+        "rev": "cdf94a18023c92f41808ec874ba577d914674717",
         "type": "github"
       },
       "original": {
@@ -260,11 +260,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1748026106,
-        "narHash": "sha256-6m1Y3/4pVw1RWTsrkAK2VMYSzG4MMIj7sqUy7o8th1o=",
+        "lastModified": 1748190013,
+        "narHash": "sha256-R5HJFflOfsP5FBtk+zE8FpL8uqE7n62jqOsADvVshhE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "063f43f2dbdef86376cc29ad646c45c46e93234c",
+        "rev": "62b852f6c6742134ade1abdd2a21685fd617a291",
         "type": "github"
       },
       "original": {
