@@ -23,11 +23,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1752424616,
-        "narHash": "sha256-hzUHeFxuOCJb22ALhMs9griuvu9kKl4dBk9zwXxIXQw=",
+        "lastModified": 1752507492,
+        "narHash": "sha256-J09FARWCxe1AUQ878+O2vkjyNPO5l6AL9xFHFG1kmKg=",
         "owner": "nlewo",
         "repo": "comin",
-        "rev": "726d5998f3297193ca302052ad73596f3e40f893",
+        "rev": "1d3a49b293dca9e1e36dc2258a120a1d6a803428",
         "type": "github"
       },
       "original": {
@@ -76,11 +76,11 @@
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
-        "lastModified": 1748383148,
-        "narHash": "sha256-pGvD/RGuuPf/4oogsfeRaeMm6ipUIznI2QSILKjKzeA=",
+        "lastModified": 1752505648,
+        "narHash": "sha256-kp1zouWCDGaN1dgW5V5YHhhaq2sJBVyBdLQyP0T6Z1s=",
         "owner": "rafaelmardojai",
         "repo": "firefox-gnome-theme",
-        "rev": "4eb2714fbed2b80e234312611a947d6cb7d70caf",
+        "rev": "320e418efcf02e8c24e1d632f032b3859b8c620b",
         "type": "github"
       },
       "original": {
@@ -130,11 +130,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1752449767,
-        "narHash": "sha256-P8mQIrgIImASTlNkHPfKwGTmyZgku8EUt6cF52s3N/Y=",
+        "lastModified": 1752467539,
+        "narHash": "sha256-4kaR+xmng9YPASckfvIgl5flF/1nAZOplM+Wp9I5SMI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1a4d8ffd320c2393b72e7ebc5b647122d5703056",
+        "rev": "1e54837569e0b80797c47be4720fab19e0db1616",
         "type": "github"
       },
       "original": {
@@ -164,11 +164,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1752450223,
-        "narHash": "sha256-UeoFLOyPR/Dbj3NOHQzE3/f2ct5HtbIfMq+ZI508IQw=",
+        "lastModified": 1752513162,
+        "narHash": "sha256-ZwiiltQ3KjI+SIGSoNNJmrxsa2tv+HMs4RYaAtMR9Bk=",
         "owner": "ggml-org",
         "repo": "llama.cpp",
-        "rev": "0d9226763c82562186122f3b827fa3862864a19c",
+        "rev": "bdca38376f7e8dd928defe01ce6a16218a64b040",
         "type": "github"
       },
       "original": {
@@ -180,11 +180,11 @@
     "morewaita": {
       "flake": false,
       "locked": {
-        "lastModified": 1752281656,
-        "narHash": "sha256-3j8dZv8OMEUHXmMdiSb/wp6FxJrsLQKHVR2zE+8XrJw=",
+        "lastModified": 1752551596,
+        "narHash": "sha256-zz5WtwoE/j5riR9eqyAvOuYIYf2EMAAM8xRaOXnWtvw=",
         "owner": "somepaulo",
         "repo": "MoreWaita",
-        "rev": "9e61807fc2a5f959df398d7cf0aedc9e92b4c89d",
+        "rev": "4f8d3a05a648fb94f04e84b620c9fd43b945aee6",
         "type": "github"
       },
       "original": {
