@@ -59,11 +59,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1752811437,
-        "narHash": "sha256-TVWYBcNpeQ3fEloryVP9N2yJnC3vuPpoZF1RqFFWFt0=",
+        "lastModified": 1752897836,
+        "narHash": "sha256-W1Biv8S65GIQVZea6oXk7zMShuPmhJwBkSXKab7Bmf8=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "369dccacc0a8214600773b3bbbf68d98a19b74e8",
+        "rev": "60675ef0b65167467396df93f816eb2bd2733169",
         "type": "gitlab"
       },
       "original": {
@@ -164,11 +164,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1752860246,
-        "narHash": "sha256-PZpPxs7bmgSb2mWil1t5R9fXXLihyta8r1TqmuuaTjE=",
+        "lastModified": 1752958041,
+        "narHash": "sha256-aCb71zoJO59FCVXIdmDRTQkozlAYeoNZdEVY7FGK8VY=",
         "owner": "ggml-org",
         "repo": "llama.cpp",
-        "rev": "bf9087f59aab940cf312b85a67067ce33d9e365a",
+        "rev": "36c153248faf969af1b62ab231348694b2047b8b",
         "type": "github"
       },
       "original": {
@@ -180,11 +180,11 @@
     "morewaita": {
       "flake": false,
       "locked": {
-        "lastModified": 1752891861,
-        "narHash": "sha256-4cFXpdFuxrHJuvfdb/c6BLmePjIr4uGTobVVExWG7nw=",
+        "lastModified": 1752968612,
+        "narHash": "sha256-CxnNXkg6F5Me2gV8khdx27P+LQDh1Tzqu8oEia04jOU=",
         "owner": "somepaulo",
         "repo": "MoreWaita",
-        "rev": "80b90a53507de14c57bb119527d94a222ae72d17",
+        "rev": "4ca252dfa0216325537c0dc4cec48e57682d7aad",
         "type": "github"
       },
       "original": {
