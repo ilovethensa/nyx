@@ -25,11 +25,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1780029372,
-        "narHash": "sha256-CQHDDdpM+f6DqZR4Z9cyp2TQ5RDj5AWPrr1M2nH3JU8=",
+        "lastModified": 1780200954,
+        "narHash": "sha256-3476T026t+XSpOvgBGzKSG6J4swuRLnPO9dR+OATtq8=",
         "owner": "nlewo",
         "repo": "comin",
-        "rev": "d14e173ebe9ffe07b40ddd4b8890a033661e0a6b",
+        "rev": "4f14d338d755239c27131cbf6b466be4bbb20f91",
         "type": "github"
       },
       "original": {
@@ -61,11 +61,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1780113776,
-        "narHash": "sha256-TdQ5d9lxtDRqha6kH72ho753dDWAkLovwgm6/t9C8kM=",
+        "lastModified": 1780200155,
+        "narHash": "sha256-cKpqEvRqxnCbp/2ZVczMHws31Qh4D/HTEuanWuJmySk=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "ef5891df31fffcc98e5cdcb3dbb20da64be35c3b",
+        "rev": "d29c0c2692ced897777eca19c9bab1b34be0e0d6",
         "type": "gitlab"
       },
       "original": {
@@ -207,11 +207,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1780120350,
-        "narHash": "sha256-sIQDb2idkqrd5H6JVu2dsIGhr5E4H4RT3AYkid8zP8I=",
+        "lastModified": 1780208267,
+        "narHash": "sha256-6NBbI3NhYbqJzcUKdh0YNp4qyOX1db1D2NU+USFt+oA=",
         "owner": "ggml-org",
         "repo": "llama.cpp",
-        "rev": "d4204b03a592a90cb62feaaa14276c9407e36cbd",
+        "rev": "22cadc1944f4658214aee03abd08240358840a95",
         "type": "github"
       },
       "original": {
