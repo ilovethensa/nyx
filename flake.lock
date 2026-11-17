@@ -61,11 +61,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1794801771,
-        "narHash": "sha256-TdlskgDOwOwH+cXD1Hs1eiaCi0uLnYYxbBlLckFoNOU=",
+        "lastModified": 1794888279,
+        "narHash": "sha256-Sg9byhoKo66ftwK7r7p8bhxeD4/t6nGvKU+U/O/W8Lw=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "2060a2a111cee4c855ba08e3df37173321d9d589",
+        "rev": "1f39e7ebb068f7b3ba489137ccfbcbc108d6e58b",
         "type": "gitlab"
       },
       "original": {
@@ -148,11 +148,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794715309,
-        "narHash": "sha256-awkBBs5ctFKgEYjpNGpi3t/VqF589n5EWfdinRb2gNI=",
+        "lastModified": 1794897420,
+        "narHash": "sha256-hMI9Xg+lxS8kbnxIxL/jPQn688dstoxQAcMEbCb1ax0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a1293da7dd8e497e08d26173f97e2976b36a31ea",
+        "rev": "5b76c5b8eec25fdbce4f43309b3ee10584374a26",
         "type": "github"
       },
       "original": {
@@ -207,11 +207,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1794824047,
-        "narHash": "sha256-k3tPBzLK1IP3t2O8Kxt8Q9mUPfIjk/YK2Z0DiCVxgio=",
+        "lastModified": 1794914368,
+        "narHash": "sha256-iRGIAlccsMTYTwZ75TPijgl/TObnkeISi90Q7xto+Mg=",
         "owner": "ggml-org",
         "repo": "llama.cpp",
-        "rev": "6b01a4767f8d3d0c416c410a49861333965c0982",
+        "rev": "054a1babf3f57074b0f63f415fc34bdf13435a64",
         "type": "github"
       },
       "original": {
@@ -370,11 +370,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1793341285,
-        "narHash": "sha256-LOv16TsMYV2/8BUYnhSxHkOASe7es2ORbqMeLlZJ8Hc=",
-        "rev": "1c89083e451e891152365b799595cf7790a43325",
+        "lastModified": 1794537146,
+        "narHash": "sha256-bTKSclXJAmo9qdxPedTBHUGr8awPr4BrbOoOutJsYIc=",
+        "rev": "d5cc6833999746cffdfe0598f7bc801a57b887a9",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1105037.1c89083e451e/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1119549.d5cc68339997/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
@@ -428,11 +428,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1793662659,
-        "narHash": "sha256-a+za5QCDlOe/PsuMlZiBcQ13cyiyOscK17BAJFu1/dE=",
+        "lastModified": 1794871977,
+        "narHash": "sha256-An9Qcr31Z+PmF4TlJWY6RkM4yPbBKc2vkyp6NctvMEk=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "13e6fed4eb99f809d390fb50f591bed6cb716dc0",
+        "rev": "cd7d88aca6db91899373d5574bb252547f4c8c2c",
         "type": "github"
       },
       "original": {
